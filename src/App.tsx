@@ -1,6 +1,7 @@
 import React, { ReactNode, useState } from "react";
 import { Greetings } from "./components/Greetings";
 import Modal from "./components/Modal";
+import useOutsideClick from "./hooks/useOutsideClick";
 import "./App.css";
 
 interface Todo {
@@ -56,13 +57,13 @@ function App() {
   const [list, setList] = useState(initialList);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // const ref = useOutsideClick((e) => {
-  //   console.log("Yeah, you clicked outside!");
-  // });
+  const ref = useOutsideClick(() => {
+    console.log("Yeah, you clicked outside!");
+  });
 
   return (
     <div className="app">
-      <Modal>
+      <Modal refValue={ref}>
         <p>Hey, I'm a modal. Click anywhere outside of me to close.</p>
       </Modal>
       <section className="header">

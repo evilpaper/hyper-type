@@ -1,9 +1,17 @@
 import React, { ReactNode } from "react";
 
-export default function Modal({ children }: { children: ReactNode }) {
+export default function Modal({
+  children,
+  refValue,
+}: {
+  children: ReactNode;
+  refValue: any;
+}) {
   return (
     <div className="container">
-      <div className="modal">{children}</div>
+      <div ref={refValue} className="modal">
+        {children}
+      </div>
     </div>
   );
 }
