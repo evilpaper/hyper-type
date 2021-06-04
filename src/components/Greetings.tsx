@@ -9,7 +9,7 @@ export function Greetings({ message }: { message: string }) {
 
 // A little more explicit example where we also declare what the
 // function will return, that is either a ReactElement or null
-// The children is declared as a ReactNode cause it takes anothe JSX element
+// The children is declared as a ReactNode cause it takes another JSX element
 export function GreetingsWithContent({
   children,
 }: {
