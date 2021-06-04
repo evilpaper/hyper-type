@@ -59,16 +59,20 @@ function App() {
 
   const ref = useOutsideClick(() => {
     console.log("Yeah, you clicked outside!");
+    setIsModalOpen(false);
   });
 
   return (
     <div className="app">
-      <Modal refValue={ref}>
-        <p>Hey, I'm a modal. Click anywhere outside of me to close.</p>
-      </Modal>
+      {isModalOpen && (
+        <Modal refValue={ref}>
+          <p>Hey, I'm a modal. Click anywhere outside of me to close.</p>
+        </Modal>
+      )}
+
       <section className="header">
         <Greetings message="Hyper Type" />
-        <button>Sign in</button>
+        <button onClick={() => setIsModalOpen(true)}>Sign in</button>
       </section>
       <section className="main">
         <List items={list} />
