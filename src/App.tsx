@@ -58,14 +58,13 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const ref = useOutsideClick(() => {
-    console.log("Yeah, you clicked outside!");
     setIsModalOpen(false);
   });
 
   return (
     <div className="app">
       {isModalOpen && (
-        <Modal refValue={ref}>
+        <Modal onOutsideClick={ref}>
           <p>Hey, I'm a modal. Click anywhere outside of me to close.</p>
         </Modal>
       )}

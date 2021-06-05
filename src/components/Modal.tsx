@@ -2,14 +2,14 @@ import React, { ReactNode } from "react";
 
 export default function Modal({
   children,
-  refValue,
+  onOutsideClick,
 }: {
   children: ReactNode;
-  refValue: any;
+  onOutsideClick: any;
 }) {
   return (
     <div className="container">
-      <div ref={refValue} className="modal">
+      <div ref={onOutsideClick} className="modal">
         {children}
       </div>
     </div>
