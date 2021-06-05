@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { Greetings } from "./components/Greetings";
 import Modal from "./components/Modal";
 import useOutsideClick from "./hooks/useOutsideClick";
@@ -24,7 +24,7 @@ function List({ items }: { items?: Todo[] }) {
   );
 }
 
-const initialList = [
+const initialTodos = [
   { id: 1, text: "First todo", done: false },
   { id: 2, text: "Second todo", done: false },
   { id: 3, text: "Third todo", done: false },
@@ -32,12 +32,24 @@ const initialList = [
 ];
 
 function App() {
-  const [list, setList] = useState(initialList);
+  const [todos, setTodos] = useState(initialTodos);
+  const [newTodo, setNewTodo] = useState<string>("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const ref = useOutsideClick(() => {
     setIsModalOpen(false);
   });
+
+  function handleChange(e: FormEvent<HTMLInputElement>) {
+    setNewTodo(e.currentTarget.value);
+  }
+
+  function handleSubmit(e: FormEvent<HTMLButtonElement>) {
+    e.preventDefault();
+    const updatedTodos = [...todos, { id: 4, text: newTodo, done: false }];
+    setTodos(updatedTodos);
+    setNewTodo("");
+  }
 
   return (
     <div className="app">
@@ -54,10 +66,15 @@ function App() {
       <section className="main">
         <form>
           <label htmlFor="todo">What needs to be done?</label>
-          <input type="text" name="todo" />
-          <button>Add</button>
+          <input
+            type="text"
+            name="todo"
+            value={newTodo}
+            onChange={handleChange}
+          />
+          <button onClick={handleSubmit}>Add</button>
         </form>
-        <List items={list} />
+        <List items={todos} />
       </section>
     </div>
   );
