@@ -26,3 +26,18 @@ button:hover {
   background-color: black;
   color: white;
 }
+
+input {
+  margin: 0;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 1em;
+  padding: 0 2em;
+  height: 3em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 16em;
+}
