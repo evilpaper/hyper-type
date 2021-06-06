@@ -39,5 +39,11 @@ input {
 form {
   display: flex;
   flex-direction: column;
-  width: 16em;
+  width: 22em;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
