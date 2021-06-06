@@ -24,10 +24,18 @@ export default function AddTodo({
   }
 
   return (
-    <form>
-      <label htmlFor="todo">What needs to be done?</label>
-      <input type="text" name="todo" value={newTodo} onChange={handleChange} />
-      <button onClick={handleSubmit}>Add</button>
+    <form className="addTodo__form">
+      <label htmlFor="todo"></label>
+      <input
+        type="text"
+        name="todo"
+        value={newTodo}
+        onChange={handleChange}
+        placeholder="What needs to be done"
+      />
+      <button className="addTodo__button" onClick={handleSubmit}>
+        Add
+      </button>
     </form>
   );
 }

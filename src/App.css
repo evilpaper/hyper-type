@@ -37,6 +37,9 @@ ul {
 
 .main {
   padding: 1em 2em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .container {
@@ -61,4 +64,12 @@ ul {
     7px 10px 12px hsl(255, 10%, 38%, 0.15),
     5px 14px 12px hsl(255, 12%, 38%, 0.1),
     12px 16px 12px hsl(255, 14%, 38%, 0.05);
+}
+
+.addTodo__form {
+  display: flex;
+}
+
+.addTodo__button {
+  margin-left: 1em;
 }
