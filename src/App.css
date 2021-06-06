@@ -73,3 +73,12 @@ ul {
 .addTodo__button {
   margin-left: 1em;
 }
+
+.todo__item {
+  display: flex;
+  align-items: center;
+}
+
+.todo__checkbox {
+  margin-right: 1em;
+}

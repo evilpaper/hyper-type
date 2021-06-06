@@ -16,9 +16,10 @@ interface Todo {
 function List({ items }: { items: Todo[] }) {
   return (
     <ul>
-      {items?.map((item, index) => {
+      {items.map((item, index) => {
         return (
-          <li key={index}>
+          <li key={index} className="todo__item">
+            <input className="todo__checkbox" type="checkbox" />
             <p>{item.text}</p>
           </li>
         );
@@ -36,7 +37,6 @@ const initialTodos = [
 
 function App() {
   const [todos, setTodos] = useState(initialTodos);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const ref = useOutsideClick(() => {
