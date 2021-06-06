@@ -1,10 +1,5 @@
 import React, { FormEvent, useState } from "react";
-
-interface Todo {
-  id: number;
-  text: string;
-  done: boolean;
-}
+import { Todo } from "../types";
 
 export default function AddTodo({
   addTodo,

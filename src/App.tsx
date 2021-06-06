@@ -6,12 +6,7 @@ import Modal from "./components/Modal";
 
 import useOutsideClick from "./hooks/useOutsideClick";
 import "./App.css";
-
-interface Todo {
-  id: number;
-  text: string;
-  done: boolean;
-}
+import { Todo } from "./types";
 
 function List({ items }: { items: Todo[] }) {
   return (
@@ -36,7 +31,7 @@ const initialTodos = [
 ];
 
 function App() {
-  const [todos, setTodos] = useState(initialTodos);
+  const [todos, setTodos] = useState<Array<Todo>>(initialTodos);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const ref = useOutsideClick(() => {
