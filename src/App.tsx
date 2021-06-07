@@ -2,26 +2,12 @@ import React, { useState } from "react";
 
 import { Greetings } from "./components/Greetings";
 import AddTodo from "./components/AddTodo";
+import TodoList from "./components/TodoList";
 import Modal from "./components/Modal";
 
 import useOutsideClick from "./hooks/useOutsideClick";
 import "./App.css";
 import { Todo } from "./types";
-
-function List({ items }: { items: Todo[] }) {
-  return (
-    <ul>
-      {items.map((item, index) => {
-        return (
-          <li key={index} className="todo__item">
-            <input className="todo__checkbox" type="checkbox" />
-            <p>{item.text}</p>
-          </li>
-        );
-      })}
-    </ul>
-  );
-}
 
 const initialTodos = [
   { id: 1, text: "First todo", done: false },
@@ -55,7 +41,7 @@ function App() {
       </section>
       <section className="main">
         <AddTodo addTodo={addTodo} />
-        <List items={todos} />
+        <TodoList items={todos} />
       </section>
     </div>
   );
