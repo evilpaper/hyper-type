@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
+import Modal from "./components/Modal";
+
 import { Greetings } from "./components/Greetings";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
-import Modal from "./components/Modal";
+import Jobs from "./components/Jobs";
 
 import useOutsideClick from "./hooks/useOutsideClick";
 import "./App.css";
@@ -40,8 +42,11 @@ function App() {
         <button onClick={() => setIsModalOpen(true)}>Sign in</button>
       </section>
       <section className="main">
-        <AddTodo addTodo={addTodo} />
-        <TodoList items={todos} />
+        <article>
+          <AddTodo addTodo={addTodo} />
+          <TodoList items={todos} />
+        </article>
+        <Jobs />
       </section>
     </div>
   );
