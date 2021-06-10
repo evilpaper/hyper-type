@@ -30,6 +30,11 @@ function App() {
     setTodos([...todos, todo]);
   }
 
+  function deletetodo(todo: Todo) {
+    const updatedTodos = todos.filter((item) => item.id !== todo.id);
+    setTodos(updatedTodos);
+  }
+
   return (
     <div className="app">
       {isModalOpen && (
@@ -44,7 +49,7 @@ function App() {
       <section className="main">
         <article>
           <AddTodo addTodo={addTodo} />
-          <TodoList items={todos} />
+          <TodoList items={todos} deleteTodo={deletetodo} />
         </article>
         <Jobs />
       </section>

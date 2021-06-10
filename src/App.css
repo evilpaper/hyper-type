@@ -76,8 +76,24 @@ ul {
 .todo__item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.todo__main {
+  display: flex;
+  align-items: center;
 }
 
 .todo__checkbox {
   margin-right: 1em;
+}
+
+.todo__delete {
+  padding: 0.4em 1em;
+  margin-left: 1em;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
