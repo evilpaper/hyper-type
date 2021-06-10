@@ -10,6 +10,7 @@ export default function AddTodo({
 
   function handleSubmit(e: FormEvent<HTMLButtonElement>) {
     e.preventDefault();
+    if (newTodo === "") return;
     addTodo({ id: 4, text: newTodo, done: false });
     setNewTodo("");
   }
