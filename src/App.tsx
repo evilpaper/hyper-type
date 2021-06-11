@@ -26,13 +26,15 @@ function App() {
     setIsModalOpen(false);
   });
 
-  function addTodo(todo: Todo) {
-    setTodos([...todos, todo]);
-  }
-
   function deletetodo(todo: Todo) {
     const updatedTodos = todos.filter((item) => item.id !== todo.id);
     setTodos(updatedTodos);
+  }
+
+  function handleAddTodo(text: string) {
+    const id: number = todos.length + 1;
+    const newTodo: Todo = { id: id, text: text, done: false };
+    setTodos([...todos, newTodo]);
   }
 
   return (
@@ -48,7 +50,7 @@ function App() {
       </section>
       <section className="main">
         <article>
-          <AddTodo addTodo={addTodo} />
+          <AddTodo handleAddTodo={handleAddTodo} />
           <TodoList items={todos} deleteTodo={deletetodo} />
         </article>
         <Jobs />

@@ -2,16 +2,16 @@ import React, { FormEvent, useState } from "react";
 import { Todo } from "../types";
 
 export default function AddTodo({
-  addTodo,
+  handleAddTodo,
 }: {
-  addTodo: (todo: Todo) => void;
+  handleAddTodo: (text: string) => void;
 }) {
   const [newTodo, setNewTodo] = useState<string>("");
 
   function handleSubmit(e: FormEvent<HTMLButtonElement>) {
     e.preventDefault();
     if (newTodo === "") return;
-    addTodo({ id: 4, text: newTodo, done: false });
+    handleAddTodo(newTodo);
     setNewTodo("");
   }
 
