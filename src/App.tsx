@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Modal from "./components/Modal";
 import { Greetings } from "./components/Greetings";
 import Jobs from "./components/Jobs";

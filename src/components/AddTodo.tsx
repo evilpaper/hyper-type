@@ -1,5 +1,4 @@
 import React, { FormEvent, useState } from "react";
-import { Todo } from "../types";
 
 export default function AddTodo({
   handleAddTodo,
