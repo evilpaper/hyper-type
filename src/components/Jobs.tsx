@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 
 interface Job {
-  name: {};
+  id: number;
+  name: string;
+  email: string;
 }
 
 export default function Jobs() {
   const [jobs, setJobs] = useState<Job[]>([]);
   useEffect(() => {
-    fetch("https://randomuser.me/api/?results=50")
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.results);
-        setJobs(data.results);
+        setJobs(data);
       });
   }, []);
 
@@ -23,7 +24,7 @@ export default function Jobs() {
           jobs.map((job, index) => {
             return (
               <li key={index}>
-                <h2>I'm a job</h2>
+                <h2>{job.name}</h2>
               </li>
             );
           })}
