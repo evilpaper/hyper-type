@@ -11,15 +11,8 @@ import useOutsideClick from "./hooks/useOutsideClick";
 import "./App.css";
 import { Todo } from "./types";
 
-const initialTodos = [
-  { id: 1, text: "First todo", done: false },
-  { id: 2, text: "Second todo", done: false },
-  { id: 3, text: "Third todo", done: false },
-  { id: 4, text: "Fourth todo", done: false },
-];
-
 function App() {
-  const [todos, setTodos] = useState<Array<Todo>>(initialTodos);
+  const [todos, setTodos] = useState<Array<Todo>>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const ref = useOutsideClick(() => {
@@ -53,7 +46,6 @@ function App() {
           <AddTodo handleAddTodo={handleAddTodo} />
           <TodoList items={todos} deleteTodo={deletetodo} />
         </article>
-        <Jobs />
       </section>
     </div>
   );
