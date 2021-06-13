@@ -20,10 +20,10 @@ export default function AddTodo({
 
   return (
     <form className="addTodo__form">
-      <label htmlFor="todo"></label>
+      <label htmlFor="addTodo"></label>
       <input
         type="text"
-        name="todo"
+        name="addTodo"
         value={newTodo}
         onChange={handleChange}
         placeholder="What needs to be done..."

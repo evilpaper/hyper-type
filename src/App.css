@@ -100,3 +100,12 @@ ul {
   justify-content: space-between;
   color: slategray;
 }
+
+.searchTodo__form {
+  margin-top: 0.4em;
+}
+
+.searchTodo__input {
+  width: 100%;
+  display: inline-block;
+}

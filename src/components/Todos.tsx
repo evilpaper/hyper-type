@@ -19,6 +19,15 @@ export default function TodoApp() {
   return (
     <article>
       <AddTodo handleAddTodo={handleAddTodo} />
+      <form className="searchTodo__form">
+        <label htmlFor="searchTodo"></label>
+        <input
+          className="searchTodo__input"
+          type="text"
+          name="searchTodo"
+          placeholder="Search..."
+        />
+      </form>
       <TodoList items={todos} onDeleteTodo={handleDeleteTodo} />
     </article>
   );
