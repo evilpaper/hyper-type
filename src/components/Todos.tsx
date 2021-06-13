@@ -16,18 +16,10 @@ export default function TodoApp() {
     const newTodo: Todo = { id: id, text: text, done: false };
     setTodos([...todos, newTodo]);
   }
+
   return (
     <article>
       <AddTodo handleAddTodo={handleAddTodo} />
-      <form className="searchTodo__form">
-        <label htmlFor="searchTodo"></label>
-        <input
-          className="searchTodo__input"
-          type="text"
-          name="searchTodo"
-          placeholder="Search..."
-        />
-      </form>
       <TodoList items={todos} onDeleteTodo={handleDeleteTodo} />
     </article>
   );
