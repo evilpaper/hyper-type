@@ -18,14 +18,29 @@ export default function List({
               <p>{item.text}</p>
             </div>
             <button className="todo__delete" onClick={() => deleteTodo(item)}>
-              <svg width="20" height="20" fill="currentColor">
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="2.5"
+                  width="24.7487"
+                  height="3.53553"
+                  rx="1.76777"
+                  transform="rotate(45 2.5 0)"
+                />
+                <rect
+                  x="20"
+                  y="2.5"
+                  width="24.7487"
+                  height="3.53553"
+                  rx="1.76777"
+                  transform="rotate(135 20 2.5)"
                 />
               </svg>
-              <p>Delete</p>
             </button>
           </li>
         );

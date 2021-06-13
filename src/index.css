@@ -16,9 +16,9 @@ select {
 button {
   margin: 0;
   background-color: transparent;
-  border: 2px solid black;
-  border-radius: 1em;
-  padding: 0 2em;
+  border: 1px solid slategray;
+  border-radius: 0.4em;
+  padding: 0 1.4em;
   height: 2.6em;
 }
 
@@ -30,8 +30,8 @@ button:hover {
 input {
   margin: 0;
   background-color: transparent;
-  border: 2px solid black;
-  border-radius: 1em;
-  padding: 0 1em;
+  border: 1px solid slategray;
+  border-radius: 0.4em;
+  padding: 0 1.4em 0 0.8em;
   height: 2.6em;
 }

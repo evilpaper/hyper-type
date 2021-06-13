@@ -34,6 +34,7 @@ export default function Jobs() {
                 <h2>{job.name.first}</h2>
                 <h2>{job.name.last}</h2>
                 <h2>{job.id.value}</h2>
+                <img src={job.picture.medium} alt="Job" />
               </li>
             );
           })}
