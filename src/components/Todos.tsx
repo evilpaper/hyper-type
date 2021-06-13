@@ -6,7 +6,7 @@ import TodoList from "./TodoList";
 export default function TodoApp() {
   const [todos, setTodos] = useState<Array<Todo>>([]);
 
-  function deletetodo(todo: Todo) {
+  function handleDeleteTodo(todo: Todo) {
     const updatedTodos = todos.filter((item) => item.id !== todo.id);
     setTodos(updatedTodos);
   }
@@ -19,7 +19,7 @@ export default function TodoApp() {
   return (
     <article>
       <AddTodo handleAddTodo={handleAddTodo} />
-      <TodoList items={todos} deleteTodo={deletetodo} />
+      <TodoList items={todos} onDeleteTodo={handleDeleteTodo} />
     </article>
   );
 }

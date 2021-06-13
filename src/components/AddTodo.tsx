@@ -26,7 +26,7 @@ export default function AddTodo({
         name="todo"
         value={newTodo}
         onChange={handleChange}
-        placeholder="What needs to be done"
+        placeholder="What needs to be done..."
       />
       <button className="addTodo__button" onClick={handleSubmit}>
         Add

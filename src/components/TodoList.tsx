@@ -3,10 +3,10 @@ import { Todo } from "../types";
 
 export default function List({
   items,
-  deleteTodo,
+  onDeleteTodo,
 }: {
   items: Todo[];
-  deleteTodo: (item: Todo) => void;
+  onDeleteTodo: (item: Todo) => void;
 }) {
   return (
     <ul>
@@ -17,7 +17,7 @@ export default function List({
               <input className="todo__checkbox" type="checkbox" />
               <p>{item.text}</p>
             </div>
-            <button className="todo__delete" onClick={() => deleteTodo(item)}>
+            <button className="todo__delete" onClick={() => onDeleteTodo(item)}>
               <svg
                 width="20"
                 height="20"
