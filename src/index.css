@@ -1,3 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
 body {
   margin: 0;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -34,4 +44,8 @@ input {
   border-radius: 0.4em;
   padding: 0 1.4em 0 0.8em;
   height: 2.6em;
+}
+
+input:focus {
+  border: 2px solid dodgerblue;
 }
