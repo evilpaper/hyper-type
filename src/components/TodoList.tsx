@@ -17,6 +17,7 @@ export default function List({
   }, [items]);
 
   function handleSearchInput(e: FormEvent<HTMLInputElement>) {
+    e.preventDefault();
     setSearch(e.currentTarget.value);
     const searchPhrase = e.currentTarget.value;
 
@@ -32,7 +33,10 @@ export default function List({
 
   return (
     <>
-      <form className="searchTodo__form">
+      <form
+        className="searchTodo__form"
+        onSubmit={(e: FormEvent<HTMLFormElement>) => e.preventDefault()}
+      >
         <label htmlFor="searchTodo"></label>
         <input
           className="searchTodo__input"
