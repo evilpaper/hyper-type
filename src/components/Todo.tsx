@@ -3,10 +3,10 @@ import { Todo } from "../types";
 
 export default function TodoItem({
   item,
-  onDeleteTodo,
+  handleDeleteTodo,
 }: {
   item: Todo;
-  onDeleteTodo: (item: Todo) => void;
+  handleDeleteTodo: (item: Todo) => void;
 }) {
   return (
     <li key={item.id} className="todo__item">
@@ -14,7 +14,7 @@ export default function TodoItem({
         <input className="todo__checkbox" type="checkbox" />
         <p>{item.text}</p>
       </div>
-      <button className="todo__delete" onClick={() => onDeleteTodo(item)}>
+      <button className="todo__delete" onClick={() => handleDeleteTodo(item)}>
         <svg
           width="20"
           height="20"

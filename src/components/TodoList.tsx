@@ -4,10 +4,10 @@ import TodoItem from "./Todo";
 
 export default function List({
   items,
-  onDeleteTodo,
+  handleDeleteTodo,
 }: {
   items: Todo[];
-  onDeleteTodo: (item: Todo) => void;
+  handleDeleteTodo: (item: Todo) => void;
 }) {
   const [currentList, setCurrentList] = useState<Array<Todo>>(items);
   const [search, setSearch] = useState("");
@@ -45,7 +45,7 @@ export default function List({
       </form>
       <ul>
         {currentList.map((item) => {
-          return <TodoItem item={item} onDeleteTodo={onDeleteTodo} />;
+          return <TodoItem item={item} handleDeleteTodo={handleDeleteTodo} />;
         })}
       </ul>
     </>

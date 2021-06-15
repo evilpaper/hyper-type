@@ -20,7 +20,7 @@ export default function TodoApp() {
   return (
     <article>
       <AddTodo handleAddTodo={handleAddTodo} />
-      <TodoList items={todos} onDeleteTodo={handleDeleteTodo} />
+      <TodoList items={todos} handleDeleteTodo={handleDeleteTodo} />
     </article>
   );
 }
