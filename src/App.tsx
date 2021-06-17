@@ -38,6 +38,10 @@ function App() {
           <button onClick={() => setIsModalOpen(true)}>Sign in</button>
         </section>
         <section className="main">
+          <h1>
+            Hyper Type is a collection of random widget presented in the systems
+            default monospace font.
+          </h1>
           <Switch>
             <Route path="/users">
               <Users />
