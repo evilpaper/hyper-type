@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-interface Job {
+interface User {
   id: {
     value: string;
   };
@@ -13,28 +13,28 @@ interface Job {
   };
 }
 
-export default function Jobs() {
-  const [jobs, setJobs] = useState<Job[]>([]);
+export default function Users() {
+  const [users, setUsers] = useState<User[]>([]);
   useEffect(() => {
     fetch("https://randomuser.me/api/?results=20")
       .then((response) => response.json())
       .then((data) => {
-        setJobs(data.results);
+        setUsers(data.results);
       });
   }, []);
 
   return (
     <>
-      <h1>Jobs</h1>
+      <h1>Users</h1>
       <ul>
-        {jobs &&
-          jobs.map((job, index) => {
+        {users &&
+          users.map((user, index) => {
             return (
               <li key={index}>
-                <h2>{job.name.first}</h2>
-                <h2>{job.name.last}</h2>
-                <h2>{job.id.value}</h2>
-                <img src={job.picture.medium} alt="Job" />
+                <h2>{user.name.first}</h2>
+                <h2>{user.name.last}</h2>
+                <h2>{user.id.value}</h2>
+                <img src={user.picture.medium} alt="Job" />
               </li>
             );
           })}

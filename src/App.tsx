@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Modal from "./components/Modal";
 import { Greetings } from "./components/Greetings";
-import Jobs from "./components/Jobs";
+import Users from "./components/Users";
 import Todos from "./components/Todos";
 import useOutsideClick from "./hooks/useOutsideClick";
 import "./App.css";
@@ -31,7 +31,7 @@ function App() {
                 <Link to="/todos">Todos</Link>
               </li>
               <li>
-                <Link to="/jobs">Jobs</Link>
+                <Link to="/users">Users</Link>
               </li>
             </ul>
           </nav>
@@ -39,8 +39,8 @@ function App() {
         </section>
         <section className="main">
           <Switch>
-            <Route path="/jobs">
-              <Jobs />
+            <Route path="/users">
+              <Users />
             </Route>
             <Route path="/todos">
               <Todos />
