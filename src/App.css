@@ -25,6 +25,10 @@ ul {
   padding: 1em 2em;
 }
 
+.nav-list {
+  display: flex;
+}
+
 .main {
   padding: 1em 2em;
   display: flex;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Modal from "./components/Modal";
 import { Greetings } from "./components/Greetings";
 import Jobs from "./components/Jobs";
@@ -22,8 +22,19 @@ function App() {
             <p>Hey, I'm a modal. Click anywhere outside of me to close.</p>
           </Modal>
         )}
+
         <section className="header">
           <Greetings message="Hyper Type" />
+          <nav>
+            <ul className="nav-list">
+              <li>
+                <Link to="/todos">Todos</Link>
+              </li>
+              <li>
+                <Link to="/jobs">Jobs</Link>
+              </li>
+            </ul>
+          </nav>
           <button onClick={() => setIsModalOpen(true)}>Sign in</button>
         </section>
         <section className="main">
