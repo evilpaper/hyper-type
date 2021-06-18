@@ -25,13 +25,16 @@ function App() {
         )}
 
         <section className="header">
-          <Greetings message="Hyper Type" />
-          <nav>
+          <Link to="/">
+            <Greetings message="Hyper Type" />
+          </Link>
+
+          <nav className="nav">
             <ul className="nav-list">
-              <li>
+              <li className="nav-list-item">
                 <Link to="/todos">Todos</Link>
               </li>
-              <li>
+              <li className="nav-list-item">
                 <Link to="/users">Users</Link>
               </li>
             </ul>
@@ -40,14 +43,14 @@ function App() {
         </section>
         <section className="main">
           <Switch>
-            <Route path="/">
-              <Landing />
-            </Route>
             <Route path="/users">
               <Users />
             </Route>
             <Route path="/todos">
               <Todos />
+            </Route>
+            <Route path="/">
+              <Landing />
             </Route>
           </Switch>
         </section>

@@ -25,8 +25,17 @@ ul {
   padding: 1em 2em;
 }
 
+.nav {
+  flex: 2;
+}
+
 .nav-list {
   display: flex;
+  padding: 0 2em;
+}
+
+.nav-list-item {
+  padding: 0 2em;
 }
 
 .main {
