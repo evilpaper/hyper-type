@@ -5,6 +5,7 @@ import { Greetings } from "./components/Greetings";
 import Users from "./components/Users";
 import Todos from "./components/Todos";
 import Landing from "./components/Landing";
+import Countries from "./components/Countries";
 import useOutsideClick from "./hooks/useOutsideClick";
 import "./App.css";
 
@@ -53,7 +54,7 @@ function App() {
               <Todos />
             </Route>
             <Route path="/countries">
-              <h1>Hello, I'm countries</h1>
+              <Countries />
             </Route>
             <Route path="/">
               <Landing />
