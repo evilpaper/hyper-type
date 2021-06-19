@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 export default function Countries() {
+  const [countries, setCountries] = useState([]);
+
   useEffect(() => {
     fetch("https://countries.trevorblades.com/", {
       method: "POST",
@@ -15,8 +17,27 @@ export default function Countries() {
           }
         `,
       }),
-    }).then((response) => response.json().then((data) => console.log(data)));
-  });
+    }).then((response) =>
+      response.json().then((data) => setCountries(data.data.countries))
+    );
+  }, []);
 
-  return <h1>Hello, I'm the countries component</h1>;
+  return (
+    <>
+      <h1>Hello, I'm the countries component</h1>
+      <ul>
+        {countries &&
+          countries.map(
+            (
+              country: {
+                name: string;
+              },
+              index: number
+            ) => {
+              return <li key={index}>{country.name}</li>;
+            }
+          )}
+      </ul>
+    </>
+  );
 }
