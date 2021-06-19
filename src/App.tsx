@@ -37,6 +37,9 @@ function App() {
               <li className="nav-list-item">
                 <Link to="/users">Users</Link>
               </li>
+              <li className="nav-list-item">
+                <Link to="/countries">Countries</Link>
+              </li>
             </ul>
           </nav>
           <button onClick={() => setIsModalOpen(true)}>Sign in</button>
@@ -48,6 +51,9 @@ function App() {
             </Route>
             <Route path="/todos">
               <Todos />
+            </Route>
+            <Route path="/countries">
+              <h1>Hello, I'm countries</h1>
             </Route>
             <Route path="/">
               <Landing />
