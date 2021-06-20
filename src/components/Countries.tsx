@@ -31,10 +31,19 @@ export default function Countries() {
             (
               country: {
                 name: string;
+                capital: string;
               },
               index: number
             ) => {
-              return <li key={index}>{country.name}</li>;
+              return (
+                <li key={index}>
+                  <div>
+                    <h1>{country.name}</h1>
+                    <h3>Capital</h3>
+                    <h3>{country.capital}</h3>
+                  </div>
+                </li>
+              );
             }
           )}
       </ul>
