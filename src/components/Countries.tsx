@@ -24,8 +24,7 @@ export default function Countries() {
 
   return (
     <>
-      <h1>Hello, I'm the countries component</h1>
-      <ul>
+      <ul className="countries">
         {countries &&
           countries.map(
             (
@@ -36,12 +35,10 @@ export default function Countries() {
               index: number
             ) => {
               return (
-                <li key={index}>
-                  <div>
-                    <h1>{country.name}</h1>
-                    <h3>Capital</h3>
-                    <h3>{country.capital}</h3>
-                  </div>
+                <li className="country" key={index}>
+                  <h1>{country.name}</h1>
+                  <h3>Capital</h3>
+                  <h3>{country.capital ? country.capital : "N/A"}</h3>
                 </li>
               );
             }
