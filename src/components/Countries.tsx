@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export default function Countries() {
   const [countries, setCountries] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://countries.trevorblades.com/", {
@@ -18,13 +19,17 @@ export default function Countries() {
         `,
       }),
     }).then((response) =>
-      response.json().then((data) => setCountries(data.data.countries))
+      response.json().then((data) => {
+        setCountries(data.data.countries);
+        setIsLoading(false);
+      })
     );
   }, []);
 
   return (
     <>
       <ul className="countries">
+        {isLoading && <p>Loading...</p>}
         {countries &&
           countries.map(
             (
