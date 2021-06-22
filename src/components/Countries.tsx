@@ -18,12 +18,14 @@ export default function Countries() {
           }
         `,
       }),
-    }).then((response) =>
-      response.json().then((data) => {
-        setCountries(data.data.countries);
-        setIsLoading(false);
-      })
-    );
+    })
+      .then((response) =>
+        response.json().then((data) => {
+          setCountries(data.data.countries);
+          setIsLoading(false);
+        })
+      )
+      .catch((error) => console.error(error));
   }, []);
 
   return (

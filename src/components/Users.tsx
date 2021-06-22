@@ -20,7 +20,8 @@ export default function Users() {
       .then((response) => response.json())
       .then((data) => {
         setUsers(data.results);
-      });
+      })
+      .catch((error) => console.error(error));
   }, []);
 
   return (
