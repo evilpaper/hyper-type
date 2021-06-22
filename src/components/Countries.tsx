@@ -46,10 +46,13 @@ export default function Countries() {
             ) => {
               return (
                 <li className="country" key={index}>
-                  <h1>{country.name}</h1>
                   <Emoji label="flag" symbol={country.emoji} />
-                  <p>Capital</p>
-                  <h3>{country.capital ? country.capital : "N/A"}</h3>
+                  <div>
+                    <h4>{country.name}</h4>
+                    <h4 className="capital">
+                      {country.capital ? country.capital : "N/A"}
+                    </h4>
+                  </div>
                 </li>
               );
             }

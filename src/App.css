@@ -118,7 +118,7 @@ ul {
 }
 
 .countries {
-  width: 100%;
+  width: 90%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
   gap: 2em;
@@ -134,4 +134,8 @@ ul {
 .country:hover {
   background-color: dodgerblue;
   color: white;
+}
+
+.capital {
+  color: dimgray;
 }
