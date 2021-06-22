@@ -14,12 +14,14 @@ interface User {
 }
 
 export default function Users() {
+  const [isLoading, setIsLoading] = useState(true);
   const [users, setUsers] = useState<User[]>([]);
   useEffect(() => {
     fetch("https://randomuser.me/api/?results=20")
       .then((response) => response.json())
       .then((data) => {
         setUsers(data.results);
+        setIsLoading(false);
       })
       .catch((error) => console.error(error));
   }, []);
@@ -28,6 +30,7 @@ export default function Users() {
     <>
       <h1>Users</h1>
       <ul>
+        {isLoading && <p>Loading...</p>}
         {users &&
           users.map((user, index) => {
             return (

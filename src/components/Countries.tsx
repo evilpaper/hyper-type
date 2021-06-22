@@ -14,6 +14,7 @@ export default function Countries() {
             countries {
               name
               capital
+              emoji
             }
           }
         `,
@@ -38,14 +39,18 @@ export default function Countries() {
               country: {
                 name: string;
                 capital: string;
+                emoji: string;
               },
               index: number
             ) => {
               return (
                 <li className="country" key={index}>
                   <h1>{country.name}</h1>
-                  <h3>Capital</h3>
+                  <p>Capital</p>
                   <h3>{country.capital ? country.capital : "N/A"}</h3>
+                  <span role="img" aria-label="sheep">
+                    {country.emoji}
+                  </span>
                 </li>
               );
             }
