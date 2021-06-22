@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Emoji from "./Emoji";
 
 export default function Countries() {
   const [countries, setCountries] = useState([]);
@@ -46,11 +47,9 @@ export default function Countries() {
               return (
                 <li className="country" key={index}>
                   <h1>{country.name}</h1>
+                  <Emoji label="flag" symbol={country.emoji} />
                   <p>Capital</p>
                   <h3>{country.capital ? country.capital : "N/A"}</h3>
-                  <span role="img" aria-label="sheep">
-                    {country.emoji}
-                  </span>
                 </li>
               );
             }
