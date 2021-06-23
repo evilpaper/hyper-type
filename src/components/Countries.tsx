@@ -3,9 +3,10 @@ import Emoji from "./Emoji";
 
 export default function Countries() {
   const [countries, setCountries] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch("https://countries.trevorblades.com/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
