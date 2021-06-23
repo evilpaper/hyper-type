@@ -4,6 +4,8 @@ import Emoji from "./Emoji";
 export default function Countries() {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(20);
 
   useEffect(() => {
     setIsLoading(true);
@@ -31,12 +33,17 @@ export default function Countries() {
       .catch((error) => console.error(error));
   }, []);
 
+  // Get current posts
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = countries.slice(indexOfFirstItem, indexOfLastItem);
+
   return (
     <>
       <ul className="countries">
         {isLoading && <p>Loading...</p>}
-        {countries &&
-          countries.map(
+        {currentItems &&
+          currentItems.map(
             (
               country: {
                 name: string;

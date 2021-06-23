@@ -16,6 +16,8 @@ interface User {
 export default function Users() {
   const [isLoading, setIsLoading] = useState(false);
   const [users, setUsers] = useState<User[]>([]);
+
+
   useEffect(() => {
     setIsLoading(true);
     fetch("https://randomuser.me/api/?results=20")

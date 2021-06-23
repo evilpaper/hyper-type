@@ -139,3 +139,7 @@ ul {
 .capital {
   color: dimgray;
 }
+
+.country:hover .capital {
+  color: white;
+}
