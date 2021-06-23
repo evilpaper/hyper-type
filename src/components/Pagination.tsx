@@ -1,11 +1,16 @@
-import React from "react";
+import React, { FormEvent } from "react";
 
 interface Props {
   itemsPerPage: number;
   totalItems: number;
+  handlePaginationClick: (page: number) => void;
 }
 
-export default function Pagination({ itemsPerPage, totalItems }: Props) {
+export default function Pagination({
+  itemsPerPage,
+  totalItems,
+  handlePaginationClick,
+}: Props) {
   const pageNumbers: number[] = [];
 
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
@@ -18,10 +23,12 @@ export default function Pagination({ itemsPerPage, totalItems }: Props) {
         {pageNumbers.map((n: number) => {
           return (
             <li key={n}>
-              <a className="pagination-item" href="!#">
-                {" "}
+              <span
+                onClick={() => handlePaginationClick(n)}
+                className="pagination-item"
+              >
                 {n}
-              </a>
+              </span>
             </li>
           );
         })}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, FormEvent } from "react";
 import Emoji from "./Emoji";
 import Pagination from "./Pagination";
 
@@ -34,6 +34,10 @@ export default function Countries() {
       .catch((error) => console.error(error));
   }, []);
 
+  function handlePaginationClick(page: number) {
+    setCurrentPage(page);
+  }
+
   // Get current posts
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -41,7 +45,11 @@ export default function Countries() {
 
   return (
     <>
-      <Pagination itemsPerPage={itemsPerPage} totalItems={countries.length} />
+      <Pagination
+        handlePaginationClick={handlePaginationClick}
+        itemsPerPage={itemsPerPage}
+        totalItems={countries.length}
+      />
       <ul className="countries">
         {isLoading && <p>Loading...</p>}
         {currentItems &&
