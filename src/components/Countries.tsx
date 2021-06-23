@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Emoji from "./Emoji";
+import Pagination from "./Pagination";
 
 export default function Countries() {
   const [countries, setCountries] = useState([]);
@@ -40,6 +41,7 @@ export default function Countries() {
 
   return (
     <>
+      <Pagination itemsPerPage={itemsPerPage} totalItems={countries.length} />
       <ul className="countries">
         {isLoading && <p>Loading...</p>}
         {currentItems &&

@@ -118,7 +118,7 @@ ul {
 }
 
 .countries {
-  width: 90%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
   gap: 2em;
@@ -142,4 +142,19 @@ ul {
 
 .country:hover .capital {
   color: white;
+}
+
+.pagination-nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination-list {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.pagination-item {
+  padding: 0.4em;
 }
