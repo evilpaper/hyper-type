@@ -19,16 +19,17 @@ export default function Pagination({
 
   return (
     <nav className="pagination-nav">
+      <p>{totalItems} Countries</p>
       <ul className="pagination-list">
         {pageNumbers.map((n: number) => {
           return (
             <li key={n}>
-              <span
+              <button
                 onClick={() => handlePaginationClick(n)}
                 className="pagination-item"
               >
                 {n}
-              </span>
+              </button>
             </li>
           );
         })}

@@ -147,14 +147,17 @@ ul {
 .pagination-nav {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
 }
 
 .pagination-list {
   display: flex;
-  margin-bottom: 1em;
 }
 
 .pagination-item {
-  padding: 0.4em;
+  padding: 0 0.8em;
+  border: 1px solid lightgray;
+  border-radius: 0;
 }
