@@ -158,6 +158,10 @@ ul {
 
 .pagination-item {
   padding: 0 0.8em;
-  border: 1px solid lightgray;
+  border: 1px solid gainsboro;
   border-radius: 0;
+}
+
+.pagination-item:focus {
+  background-color: gainsboro;
 }
