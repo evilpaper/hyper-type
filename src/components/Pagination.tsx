@@ -3,12 +3,14 @@ import React, { FormEvent } from "react";
 interface Props {
   itemsPerPage: number;
   totalItems: number;
+  isLoading: boolean;
   handlePaginationClick: (page: number) => void;
 }
 
 export default function Pagination({
   itemsPerPage,
   totalItems,
+  isLoading = false,
   handlePaginationClick,
 }: Props) {
   const pageNumbers: number[] = [];
@@ -19,7 +21,7 @@ export default function Pagination({
 
   return (
     <nav className="pagination-nav">
-      <p>{totalItems} Countries</p>
+      {!isLoading && <p>{totalItems} Countries</p>}
       <ul className="pagination-list">
         {pageNumbers.map((n: number) => {
           return (

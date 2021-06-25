@@ -49,6 +49,7 @@ export default function Countries() {
         handlePaginationClick={handlePaginationClick}
         itemsPerPage={itemsPerPage}
         totalItems={countries.length}
+        isLoading={isLoading}
       />
       <ul className="countries">
         {isLoading && <p>Loading...</p>}
