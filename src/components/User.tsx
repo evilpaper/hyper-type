@@ -10,10 +10,9 @@ interface Props {
 export default function User({ first, last, id, imageUrl }: Props) {
   return (
     <li className="user" key={id}>
-      <img className="" src={imageUrl} alt="User" />
-      <h2>{first}</h2>
-      <h2>{last}</h2>
-      <h2>{id}</h2>
+      <img className="user-image" src={imageUrl} alt="User" />
+      <p className="user-firstname">{first}</p>
+      <p className="user-lastname">{last}</p>
     </li>
   );
 }
