@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import User from "./User";
 
 interface User {
   id: {
@@ -17,7 +18,6 @@ export default function Users() {
   const [isLoading, setIsLoading] = useState(false);
   const [users, setUsers] = useState<User[]>([]);
 
-
   useEffect(() => {
     setIsLoading(true);
     fetch("https://randomuser.me/api/?results=20")
@@ -35,14 +35,14 @@ export default function Users() {
       <ul>
         {isLoading && <p>Loading...</p>}
         {users &&
-          users.map((user, index) => {
+          users.map((user) => {
             return (
-              <li key={index}>
-                <h2>{user.name.first}</h2>
-                <h2>{user.name.last}</h2>
-                <h2>{user.id.value}</h2>
-                <img src={user.picture.medium} alt="Job" />
-              </li>
+              <User
+                first={user.name.first}
+                last={user.name.last}
+                id={user.id.value}
+                imageUrl={user.picture.medium}
+              />
             );
           })}
       </ul>
