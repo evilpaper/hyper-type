@@ -175,6 +175,11 @@ ul {
   background-color: gainsboro;
 }
 
+.pagination-item:hover {
+  background-color: gainsboro;
+  color: black;
+}
+
 .users {
   width: 90%;
 }
