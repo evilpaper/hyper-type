@@ -152,6 +152,15 @@ ul {
   margin-bottom: 1em;
 }
 
+.pagination-meta {
+  display: flex;
+}
+
+.pagination-counter {
+  margin-left: 1em;
+  color: dimgray;
+}
+
 .pagination-list {
   display: flex;
 }
@@ -164,6 +173,10 @@ ul {
 
 .pagination-item:focus {
   background-color: gainsboro;
+}
+
+.users {
+  width: 90%;
 }
 
 .user {

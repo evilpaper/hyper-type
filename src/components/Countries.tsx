@@ -46,9 +46,10 @@ export default function Countries() {
   return (
     <>
       <Pagination
-        handlePaginationClick={handlePaginationClick}
-        itemsPerPage={itemsPerPage}
         totalItems={countries.length}
+        itemsPerPage={itemsPerPage}
+        currentPage={currentPage}
+        handlePaginationClick={handlePaginationClick}
         isLoading={isLoading}
       />
       <ul className="countries">

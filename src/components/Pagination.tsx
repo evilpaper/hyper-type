@@ -1,8 +1,9 @@
-import React, { FormEvent } from "react";
+import React from "react";
 
 interface Props {
   itemsPerPage: number;
   totalItems: number;
+  currentPage: number;
   isLoading: boolean;
   handlePaginationClick: (page: number) => void;
 }
@@ -10,6 +11,7 @@ interface Props {
 export default function Pagination({
   itemsPerPage,
   totalItems,
+  currentPage,
   isLoading = false,
   handlePaginationClick,
 }: Props) {
@@ -19,9 +21,20 @@ export default function Pagination({
     pageNumbers.push(i);
   }
 
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
   return (
     <nav className="pagination-nav">
-      {!isLoading && <p>{totalItems} Countries</p>}
+      <div className="pagination-meta">
+        {" "}
+        {!isLoading && <p>{totalItems} Countries</p>}
+        {!isLoading && (
+          <p className="pagination-counter">
+            page {currentPage} / {totalPages}
+          </p>
+        )}
+      </div>
+
       <ul className="pagination-list">
         {pageNumbers.map((n: number) => {
           return (

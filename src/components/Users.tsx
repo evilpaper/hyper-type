@@ -32,7 +32,7 @@ export default function Users() {
   return (
     <>
       <h1>Users</h1>
-      <ul>
+      <ul className="users">
         {isLoading && <p>Loading...</p>}
         {users &&
           users.map((user) => {
