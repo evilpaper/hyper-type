@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import User from "./User";
+import User from "components/User";
 
-interface User {
+interface UserType {
   id: {
     value: string;
   };
@@ -16,7 +16,7 @@ interface User {
 
 export default function Users() {
   const [isLoading, setIsLoading] = useState(false);
-  const [users, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useState<UserType[]>([]);
 
   useEffect(() => {
     setIsLoading(true);
