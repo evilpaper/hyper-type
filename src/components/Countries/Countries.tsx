@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Emoji from "./Emoji";
-import Pagination from "./Pagination";
+import Emoji from "../Emoji";
+import Pagination from "../Pagination";
 
 export default function Countries() {
   const [countries, setCountries] = useState([]);

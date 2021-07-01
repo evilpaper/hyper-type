@@ -4,8 +4,8 @@ import Modal from "./components/Modal";
 import { Greetings } from "./components/Greetings";
 import Users from "./components/Users";
 import Todos from "./components/Todos";
-import Landing from "./components/Landing";
-import Countries from "./components/Countries";
+import Landing from "./components/Landing/Landing";
+import Countries from "./components/Countries/Countries";
 import useOutsideClick from "./hooks/useOutsideClick";
 import "./App.css";
 
