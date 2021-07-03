@@ -12,17 +12,17 @@ export default function Form({
     onSearch(subreddit);
   }
   return (
-    <>
-      <form>
-        <label htmlFor="subredit"></label>
-        <input
-          type="text"
-          name="subreddit"
-          value={subreddit}
-          onChange={(event) => setSubreddit(event.target.value)}
-        ></input>
-        <button type="submit">Search</button>
-      </form>
-    </>
+    <form>
+      <label htmlFor="subredit"></label>
+      <input
+        type="text"
+        name="subreddit"
+        value={subreddit}
+        onChange={(event) => setSubreddit(event.target.value)}
+      ></input>
+      <button type="submit" onClick={onSubmit}>
+        Search
+      </button>
+    </form>
   );
 }
