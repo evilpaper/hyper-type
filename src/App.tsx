@@ -6,6 +6,7 @@ import Users from "./components/Users";
 import Todos from "./components/Todos";
 import Landing from "./components/Landing/Landing";
 import Countries from "./components/Countries/Countries";
+import RedditSearch from "components/RedditSearch/RedditSearch";
 import useOutsideClick from "./hooks/useOutsideClick";
 import "./App.css";
 
@@ -29,7 +30,6 @@ function App() {
           <Link to="/">
             <Greetings message="Hyper Type" />
           </Link>
-
           <nav className="nav">
             <ul className="nav-list">
               <li className="nav-list-item">
@@ -40,6 +40,9 @@ function App() {
               </li>
               <li className="nav-list-item">
                 <Link to="/countries">Countries</Link>
+              </li>
+              <li className="nav-list-item">
+                <Link to="/reddit">Reddit Search</Link>
               </li>
             </ul>
           </nav>
@@ -55,6 +58,9 @@ function App() {
             </Route>
             <Route path="/countries">
               <Countries />
+            </Route>
+            <Route path="/reddit">
+              <RedditSearch />
             </Route>
             <Route path="/">
               <Landing />
