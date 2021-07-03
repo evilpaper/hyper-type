@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import Form from "./Form";
+import RedditSearchForm from "./RedditSearchForm";
+import styled from "styled-components";
+
+const Result = styled.p`
+  margin-top: 1em;
+`;
 
 export default function RedditSearch() {
   const [posts, setPosts] = useState([]);
@@ -9,18 +14,20 @@ export default function RedditSearch() {
     setStatus("loading");
     const url = `https://www.reddit.com/r/${subreddit}/top.json`;
     const response = await fetch(url);
-    const { data } = await response.json();
-    setPosts(data.children);
+    const { data = [] } = await response.json();
+    setPosts((data.children = []));
     setStatus("resolved");
   }
   return (
     <>
       <section>
         <h1>Find the best time for a subreddit</h1>
-        <Form onSearch={onSearch} />
+        <RedditSearchForm onSearch={onSearch} />
       </section>
-      {status === "loading" && <p>Searching...</p>}
-      {status === "resolved" && <p>Number of top posts: {posts.length}</p>}
+      {status === "loading" && <Result>Searching...</Result>}
+      {status === "resolved" && (
+        <Result>Number of top posts: {posts.length}</Result>
+      )}
     </>
   );
 }

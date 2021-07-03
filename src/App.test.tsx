@@ -1,9 +1,19 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("Renders landing page", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const landingCopy = screen.getByText(/Hyper Type is a collection/i);
+  expect(landingCopy).toBeInTheDocument();
 });
+
+// describe("header", () => {
+//   test("'Todos' link should point to the right page", () => {
+//     render(
+//       <MemoryRouter>
+//         <App />
+//       </MemoryRouter>
+//     );
+//   });
+// });
