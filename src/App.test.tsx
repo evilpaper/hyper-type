@@ -8,8 +8,8 @@ test("Renders landing page", () => {
   expect(landingCopy).toBeInTheDocument();
 });
 
-// describe("header", () => {
-//   test("'Todos' link should point to the right page", () => {
+// describe("Navigation", () => {
+//   test("'Todos' link point to todo page", () => {
 //     render(
 //       <MemoryRouter>
 //         <App />

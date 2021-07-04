@@ -1,5 +1,5 @@
 import React, { FormEvent, useState, useEffect } from "react";
-import { Todo } from "../types";
+import { Todo } from "../../types";
 import TodoItem from "./Todo";
 
 export default function List({

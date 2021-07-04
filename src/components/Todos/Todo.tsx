@@ -1,5 +1,5 @@
 import React from "react";
-import { Todo } from "../types";
+import { Todo } from "../../types";
 
 export default function TodoItem({
   item,

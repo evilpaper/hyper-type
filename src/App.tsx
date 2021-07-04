@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Modal from "./components/Modal";
 import { Greetings } from "./components/Greetings";
 import Users from "./components/Users";
-import Todos from "./components/Todos";
+import Todos from "./components/Todos/Todos";
 import Landing from "./components/Landing/Landing";
 import Countries from "./components/Countries/Countries";
 import RedditSearch from "components/RedditSearch/RedditSearch";
