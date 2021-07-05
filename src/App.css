@@ -36,6 +36,15 @@ ul {
 
 .nav-list-item {
   padding: 0 2em;
+  color: black;
+}
+
+.nav-list-item a {
+  color: black;
+}
+
+.nav-list-item .selected {
+  color: dodgerblue;
 }
 
 .main {

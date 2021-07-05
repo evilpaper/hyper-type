@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink,
+} from "react-router-dom";
 import Modal from "./common/Modal/Modal";
 import { Greetings } from "./components/Greetings/Greetings";
 import Users from "./components/Users/Users";
@@ -33,16 +39,24 @@ function App() {
           <nav className="nav">
             <ul className="nav-list">
               <li className="nav-list-item">
-                <Link to="/todos">Todos</Link>
+                <NavLink activeClassName="selected" to="/todos">
+                  Todos
+                </NavLink>
               </li>
               <li className="nav-list-item">
-                <Link to="/users">Users</Link>
+                <NavLink activeClassName="selected" to="/users">
+                  Users
+                </NavLink>
               </li>
               <li className="nav-list-item">
-                <Link to="/countries">Countries</Link>
+                <NavLink activeClassName="selected" to="/countries">
+                  Countries
+                </NavLink>
               </li>
               <li className="nav-list-item">
-                <Link to="/reddit">Reddit Search</Link>
+                <NavLink activeClassName="selected" to="/reddit">
+                  Reddit Search
+                </NavLink>
               </li>
             </ul>
           </nav>
