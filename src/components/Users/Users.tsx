@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import User from "components/User";
+import User from "components/Users/User";
 
 interface UserType {
   id: {

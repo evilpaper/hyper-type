@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Modal from "./components/Modal";
-import { Greetings } from "./components/Greetings";
-import Users from "./components/Users";
+import Modal from "./common/Modal/Modal";
+import { Greetings } from "./components/Greetings/Greetings";
+import Users from "./components/Users/Users";
 import Todos from "./components/Todos/Todos";
 import Landing from "./components/Landing/Landing";
 import Countries from "./components/Countries/Countries";
