@@ -1,6 +1,34 @@
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import Emoji from "../Emoji";
 import Pagination from "../../common/Pagination/Pagination";
+
+const List = styled.ul`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+  gap: 2em;
+`;
+
+const Capital = styled.h4`
+  color: dimgray;
+`;
+
+const Item = styled.li`
+  padding: 1em;
+  border: 1px solid slategray;
+  border-radius: 0.4em;
+  overflow: auto;
+
+  &:hover {
+    background-color: dodgerblue;
+    color: white;
+
+    ${Capital} {
+      color: white;
+    }
+  }
+`;
 
 export default function Countries() {
   const [countries, setCountries] = useState([]);
@@ -52,7 +80,7 @@ export default function Countries() {
         handlePaginationClick={handlePaginationClick}
         isLoading={isLoading}
       />
-      <ul className="countries">
+      <List>
         {isLoading && <p>Loading...</p>}
         {currentItems &&
           currentItems.map(
@@ -65,19 +93,19 @@ export default function Countries() {
               index: number
             ) => {
               return (
-                <li className="country" key={index}>
+                <Item key={index}>
                   <Emoji label="flag" symbol={country.emoji} />
                   <div>
                     <h4>{country.name}</h4>
-                    <h4 className="capital">
+                    <Capital>
                       {country.capital ? country.capital : "N/A"}
-                    </h4>
+                    </Capital>
                   </div>
-                </li>
+                </Item>
               );
             }
           )}
-      </ul>
+      </List>
     </>
   );
 }

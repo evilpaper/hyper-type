@@ -126,33 +126,6 @@ ul {
   display: inline-block;
 }
 
-.countries {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
-  gap: 2em;
-}
-
-.country {
-  padding: 1em;
-  border: 1px solid slategray;
-  border-radius: 0.4em;
-  overflow: auto;
-}
-
-.country:hover {
-  background-color: dodgerblue;
-  color: white;
-}
-
-.capital {
-  color: dimgray;
-}
-
-.country:hover .capital {
-  color: white;
-}
-
 .pagination-nav {
   width: 100%;
   display: flex;
