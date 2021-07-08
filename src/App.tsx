@@ -14,7 +14,15 @@ import Landing from "./components/Landing/Landing";
 import Countries from "./components/Countries/Countries";
 import RedditSearch from "components/RedditSearch/RedditSearch";
 import useOutsideClick from "./hooks/useOutsideClick";
+import styled from "styled-components";
 import "./App.css";
+
+const Header = styled.section`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+`;
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,7 +40,7 @@ function App() {
           </Modal>
         )}
 
-        <section className="header">
+        <Header>
           <Link to="/">
             <Greetings message="Hyper Type" />
           </Link>
@@ -61,7 +69,7 @@ function App() {
             </ul>
           </nav>
           <button onClick={() => setIsModalOpen(true)}>Sign in</button>
-        </section>
+        </Header>
         <section className="main">
           <Switch>
             <Route path="/users">
