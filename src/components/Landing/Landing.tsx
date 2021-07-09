@@ -9,7 +9,7 @@ export default function Landing() {
   return (
     <Heading className="landing__heading">
       Hyper Type is a collection of random widget presented in the systems
-      default monospace font.
+      default monospace type.
     </Heading>
   );
 }
