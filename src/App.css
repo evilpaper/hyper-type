@@ -48,10 +48,6 @@ ul {
   align-items: center;
 }
 
-.landing__heading {
-  font-size: 4em;
-}
-
 .container {
   position: absolute;
   height: 100vh;
