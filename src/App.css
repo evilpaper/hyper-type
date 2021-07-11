@@ -126,23 +126,3 @@ ul {
   background-color: gainsboro;
   color: black;
 }
-
-.users {
-  width: 90%;
-}
-
-.user {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 1em 0;
-}
-
-.user-image {
-  border-radius: 50%;
-  margin-right: 2em;
-}
-
-.user-firstname {
-  margin-right: 1em;
-}

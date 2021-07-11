@@ -1,7 +1,8 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const ScreenOverlay = styled.div`
+const ScreenOverlay = styled(motion.div)`
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -33,7 +34,7 @@ export default function Modal({
   onOutsideClick: any;
 }) {
   return (
-    <ScreenOverlay>
+    <ScreenOverlay animate={{ opacity: 1 }}>
       <StyledModal ref={onOutsideClick}>{children}</StyledModal>
     </ScreenOverlay>
   );

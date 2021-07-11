@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import User from "components/Users/User";
+import styled from "styled-components";
 
+const StyledUsers = styled.ul`
+  width: 90%;
+`;
 interface UserType {
   id: {
     value: string;
@@ -32,7 +36,7 @@ export default function Users() {
   return (
     <>
       <h1>Users</h1>
-      <ul className="users">
+      <StyledUsers>
         {isLoading && <p>Loading...</p>}
         {users &&
           users.map((user) => {
@@ -45,7 +49,7 @@ export default function Users() {
               />
             );
           })}
-      </ul>
+      </StyledUsers>
     </>
   );
 }
