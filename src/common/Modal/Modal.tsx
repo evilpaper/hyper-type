@@ -34,7 +34,12 @@ export default function Modal({
   onOutsideClick: any;
 }) {
   return (
-    <ScreenOverlay animate={{ opacity: 1 }}>
+    <ScreenOverlay
+      animate={{
+        backgroundColor: ["hsla(255, 8%, 8%, 0.0)]", "hsla(255, 8%, 8%, 0.2)"],
+      }}
+      transition={{ duration: 0.3 }}
+    >
       <StyledModal ref={onOutsideClick}>{children}</StyledModal>
     </ScreenOverlay>
   );
