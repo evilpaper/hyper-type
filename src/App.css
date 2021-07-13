@@ -90,39 +90,3 @@ ul {
   width: 100%;
   display: inline-block;
 }
-
-.pagination-nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1em;
-}
-
-.pagination-meta {
-  display: flex;
-}
-
-.pagination-counter {
-  margin-left: 1em;
-  color: dimgray;
-}
-
-.pagination-list {
-  display: flex;
-}
-
-.pagination-item {
-  padding: 0 0.8em;
-  border: 1px solid gainsboro;
-  border-radius: 0;
-}
-
-.pagination-item:focus {
-  background-color: gainsboro;
-}
-
-.pagination-item:hover {
-  background-color: gainsboro;
-  color: black;
-}

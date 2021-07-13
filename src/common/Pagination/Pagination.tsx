@@ -1,4 +1,41 @@
 import React from "react";
+import styled from "styled-components";
+
+const Navigation = styled.nav`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+`;
+
+const Meta = styled.div`
+  display: flex;
+`;
+
+const Counter = styled.p`
+  margin-left: 1em;
+  color: dimgray;
+`;
+
+const List = styled.ul`
+  display: flex;
+`;
+
+const StyledButton = styled.button`
+  padding: 0 0.8em;
+  border: 1px solid gainsboro;
+  border-radius: 0;
+
+  &:focus {
+    background-color: gainsboro;
+  }
+
+  &:hover {
+    background-color: gainsboro;
+    color: black;
+  }
+`;
 
 interface Props {
   itemsPerPage: number;
@@ -24,31 +61,27 @@ export default function Pagination({
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   return (
-    <nav className="pagination-nav">
-      <div className="pagination-meta">
+    <Navigation>
+      <Meta>
         {" "}
         {!isLoading && <p>{totalItems} Countries</p>}
         {!isLoading && (
-          <p className="pagination-counter">
+          <Counter className="pagination-counter">
             page {currentPage} / {totalPages}
-          </p>
+          </Counter>
         )}
-      </div>
-
-      <ul className="pagination-list">
+      </Meta>
+      <List>
         {pageNumbers.map((n: number) => {
           return (
             <li key={n}>
-              <button
-                onClick={() => handlePaginationClick(n)}
-                className="pagination-item"
-              >
+              <StyledButton onClick={() => handlePaginationClick(n)}>
                 {n}
-              </button>
+              </StyledButton>
             </li>
           );
         })}
-      </ul>
-    </nav>
+      </List>
+    </Navigation>
   );
 }
